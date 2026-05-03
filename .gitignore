@@ -1,0 +1,50 @@
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.db
+*.opendb
+*.VC.db
+
+# Build outputs
+x64/
+x86/
+Debug/
+Release/
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.iobj
+*.ipdb
+
+# Local bot state
+nxrth_config.ini
+nxrth_inventory.ini
+crash_log.txt
+Backups/
+templates/screenshot_*.png
+runtime/templates/screenshot_*.png
+
+# Python helper caches
+__pycache__/
+*.py[cod]
+
+# Large/generated raw Hay Day asset dumps kept outside Git
+*.zip
+*.fla
+Decoded/
+Extracted/
+TEX/
+CSV/
+SC/
+Tagged_Assets/
+Tagged_Corrected/
+Tagged_Test/
+Reference_Assets/
+codex_tmp/
+cow/

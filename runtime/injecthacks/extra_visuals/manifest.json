@@ -1,0 +1,727 @@
+{
+  "created_at": "2026-04-29T03:19:56",
+  "purpose": "Optional HD injector extra visuals: fully zeroed normal trees plus correct standalone tagged CP/FM material. CP/FM in-game atlas replacement still needs verified FLA/SC targets.",
+  "original_inject_files_touched": false,
+  "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_trees.nxrth",
+  "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/nature_new_2_invisible_trees.sctx",
+  "templates": [
+    "HD/x64/Release/injecthacks/extra_visuals/templates/cow_pasture.png",
+    "HD/x64/Release/injecthacks/extra_visuals/templates/feed_mill.png"
+  ],
+  "notes": [
+    "Tree masks are written as RGBA zero pixels, not only transparent alpha.",
+    "Normal fir/leafy tree variants were targeted; fruit-tree assets such as apple, cacao, and cherry were not targeted.",
+    "The rejected CP/FM atlas payloads are stored under extra_visuals/rejected_wrong_targets and are not injected."
+  ],
+  "updated_at": "2026-04-29T21:32:52",
+  "active_payloads": [
+    {
+      "target": "nature_new_0.sctx",
+      "changed_pixels_zeroed": 30544,
+      "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/nature_new_0_invisible_trees.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_trees_0.nxrth"
+    },
+    {
+      "target": "nature_new_1.sctx",
+      "changed_pixels_zeroed": 23419,
+      "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/nature_new_1_invisible_trees.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_trees_1.nxrth"
+    },
+    {
+      "target": "nature_new_2.sctx",
+      "changed_pixels_zeroed": 780551,
+      "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/nature_new_2_invisible_trees.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_trees.nxrth"
+    },
+    {
+      "target": "buildings_new_0.sctx",
+      "source": "buildings_new.sc saucemixer triangle mask + buildings_new.fla dairy_01 shape IDs",
+      "tags": [
+        "FM",
+        "DY"
+      ],
+      "changed_pixels_blackened_feed_mill": 175971,
+      "changed_pixels_blackened_dairy": 96950,
+      "changed_yellow_anchor_pixels_erased": 7309,
+      "yellow_anchor_points": [
+        [
+          627,
+          2732
+        ],
+        [
+          1442,
+          2683
+        ]
+      ],
+      "dairy_fla_shapes": [
+        343,
+        344,
+        345,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        367,
+        368,
+        369,
+        370,
+        380
+      ],
+      "dairy_tag_shapes": [
+        348
+      ],
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/buildings_new_0_feed_maker_fm_dairy_dy.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_buildings_new_0.nxrth",
+      "preview": "Tagged_Corrected/animal_feed_injection/previews/feed_maker_fm_buildings_new_0_before_after.png",
+      "dairy_preview": "Tagged_Corrected/animal_feed_injection/previews/red_roof_dairy_dy_buildings_new_0_before_after.png",
+      "note": "This targets the red pipe/barrel maker matched from buildings_new.fla as saucemixer and the red-roof white dairy building from buildings_new.fla."
+    },
+    {
+      "target": "buildings_new_6.sctx",
+      "source": "buildings_new.fla shape IDs",
+      "black_shapes": [
+        5025,
+        5026,
+        5034,
+        5054,
+        5055
+      ],
+      "transparent_shapes": [
+        5035,
+        5036,
+        5037,
+        5038,
+        5039,
+        5040,
+        5041,
+        5042,
+        5044,
+        5060
+      ],
+      "tag": "CP",
+      "changed_pixels_blackened": 124769,
+      "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/buildings_new_6_cow_black_cp.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_buildings_new_6.nxrth",
+      "preview": "Tagged_Corrected/cow_injection/previews/buildings_new_6_cow_before_after.png"
+    },
+    {
+      "target": "animals_0.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 568131,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_0_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_0.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_1.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 14896,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_1_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_1.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_10.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 123522,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_10_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_10.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_11.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 57431,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_11_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_11.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_12.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 51321,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_12_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_12.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_13.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 378590,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_13_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_13.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_14.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 131512,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_14_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_14.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_15.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 132434,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_15_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_15.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_16.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 53283,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_16_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_16.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_2.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 45598,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_2_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_2.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_3.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 47547,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_3_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_3.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_4.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 57970,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_4_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_4.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_5.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 84939,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_5_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_5.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_6.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 47888,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_6_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_6.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_7.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 46057,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_7_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_7.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_8.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 154723,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_8_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_8.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals_9.sctx",
+      "source": "animals.sc full atlas transparency",
+      "changed_pixels_erased": 163766,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals_9_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals_9.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals02_0.sctx",
+      "source": "animals02.sc full atlas transparency",
+      "changed_pixels_erased": 34130,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals02_0_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals02_0.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals02_1.sctx",
+      "source": "animals02.sc full atlas transparency",
+      "changed_pixels_erased": 359157,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals02_1_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals02_1.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals02_2.sctx",
+      "source": "animals02.sc full atlas transparency",
+      "changed_pixels_erased": 583578,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals02_2_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals02_2.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals02_3.sctx",
+      "source": "animals02.sc full atlas transparency",
+      "changed_pixels_erased": 74589,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals02_3_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals02_3.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals02_4.sctx",
+      "source": "animals02.sc full atlas transparency",
+      "changed_pixels_erased": 252972,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals02_4_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals02_4.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_0.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 56748,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_0_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_0.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_1.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 79100,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_1_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_1.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_2.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 273568,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_2_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_2.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_3.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 672667,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_3_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_3.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_4.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 375976,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_4_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_4.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_5.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 96819,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_5_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_5.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals03_6.sctx",
+      "source": "animals03.sc full atlas transparency",
+      "changed_pixels_erased": 101337,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals03_6_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals03_6.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_0.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 89917,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_0_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_0.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_1.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 150512,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_1_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_1.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_2.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 52895,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_2_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_2.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_3.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 136327,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_3_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_3.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_4.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 162737,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_4_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_4.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_5.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 405580,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_5_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_5.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_6.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 79124,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_6_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_6.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_7.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 240213,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_7_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_7.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_8.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 112876,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_8_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_8.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals04_9.sctx",
+      "source": "animals04.sc full atlas transparency",
+      "changed_pixels_erased": 79465,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals04_9_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals04_9.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_0.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 90654,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_0_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_0.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_1.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 171991,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_1_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_1.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_2.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 150182,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_2_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_2.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_3.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 119880,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_3_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_3.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_4.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 106951,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_4_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_4.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_5.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 111982,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_5_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_5.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_6.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 103265,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_6_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_6.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_7.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 278785,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_7_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_7.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_8.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 146312,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_8_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_8.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animals05_9.sctx",
+      "source": "animals05.sc full atlas transparency",
+      "changed_pixels_erased": 162060,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animals05_9_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animals05_9.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animal_accessories_0.sctx",
+      "source": "animal_accessories.sc full atlas transparency",
+      "changed_pixels_erased": 48071,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animal_accessories_0_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animal_accessories_0.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    },
+    {
+      "target": "animal_accessories_1.sctx",
+      "source": "animal_accessories.sc full atlas transparency",
+      "changed_pixels_erased": 28975,
+      "raw_sctx_copy": "C:/Users/XY/Desktop/XCoder-master/HD/x64/Release/injecthacks/extra_visuals/animal_accessories_1_all_invisible.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_animal_accessories_1.nxrth",
+      "note": "Entire animal/accessory atlas made transparent. Bot template cow_feed.png is not changed."
+    }
+  ],
+  "rejected_payloads": [
+    {
+      "asset": "pasture_cow",
+      "tag": "CP",
+      "target": "buildings_new_2.sctx",
+      "raw_sctx": "HD/x64/Release/injecthacks/extra_visuals/buildings_new_2_tagged.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_buildings_new_2.nxrth"
+    },
+    {
+      "asset": "building_mill_01",
+      "tag": "FM",
+      "target": "map_2.sctx",
+      "raw_sctx": "HD/x64/Release/injecthacks/extra_visuals/map_2_tagged.sctx",
+      "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_map_2.nxrth"
+    }
+  ],
+  "rejected_payloads_note": "These were moved under extra_visuals/rejected_wrong_targets because previews showed the CP/FM exports were not the user-approved cow pasture/feed mill objects.",
+  "black_tags": [
+    "HD/x64/Release/injecthacks/extra_visuals/black_tags/cow_pasture__CP.png",
+    "HD/x64/Release/injecthacks/extra_visuals/black_tags/feed_mill__FM.png"
+  ],
+  "cow_fla_injection": {
+    "work_dir": "Tagged_Corrected/cow_injection/Decoded/hayday_assets_sctx/buildings_new_6",
+    "counts": {
+      "black_ground_shapes": 1,
+      "black_fence_wall_shapes": 4,
+      "removed_detail_shapes": 10,
+      "blackened_pixels": 124769,
+      "erased_pixels": 41926
+    },
+    "note": "Ground and fence/wall shapes are black; trough/grass/detail shapes are transparent; CP is drawn last as a full white overlay on the ground shape."
+  },
+  "cow_animals_and_feed": {
+    "cow_assets": [
+      "accessory_seasonal_cow_halloween",
+      "accessory_seasonal_cow_summer",
+      "accessory_seasonal_cow_winter",
+      "cow01_harvest01",
+      "cow01_harvest01_farmpass",
+      "cow01_harvest01_halloween",
+      "cow01_harvest01_summer",
+      "cow01_harvest01_winter",
+      "cow01_hungry01",
+      "cow01_hungry01_farmpass",
+      "cow01_hungry01_halloween",
+      "cow01_hungry01_summer",
+      "cow01_hungry01_winter",
+      "cow01_idle01",
+      "cow01_idle01_farmpass",
+      "cow01_idle01_halloween",
+      "cow01_idle01_summer",
+      "cow01_idle01_winter",
+      "cow01_panic01",
+      "cow01_panic01_farmpass",
+      "cow01_panic01_halloween",
+      "cow01_panic01_summer",
+      "cow01_panic01_winter",
+      "cow01_ready01",
+      "cow01_ready01_farmpass",
+      "cow01_ready01_halloween",
+      "cow01_ready01_summer",
+      "cow01_ready01_winter",
+      "cow01_walk01",
+      "cow01_walk01_farmpass",
+      "cow01_walk01_halloween",
+      "cow01_walk01_summer",
+      "cow01_walk01_winter"
+    ],
+    "feed_asset": "saucemixer",
+    "dairy_asset": "dairy_01",
+    "dairy_fla_shapes": [
+      343,
+      344,
+      345,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      367,
+      368,
+      369,
+      370,
+      380
+    ],
+    "dairy_tag_shapes": [
+      348
+    ],
+    "note": "Cow animals and cow seasonal accessories are fully transparent; FM and the red-roof DY building are black/tagged on buildings_new_0."
+  },
+  "all_animals_invisible": {
+    "targets": [
+      "animals_0.sctx",
+      "animals_1.sctx",
+      "animals_10.sctx",
+      "animals_11.sctx",
+      "animals_12.sctx",
+      "animals_13.sctx",
+      "animals_14.sctx",
+      "animals_15.sctx",
+      "animals_16.sctx",
+      "animals_2.sctx",
+      "animals_3.sctx",
+      "animals_4.sctx",
+      "animals_5.sctx",
+      "animals_6.sctx",
+      "animals_7.sctx",
+      "animals_8.sctx",
+      "animals_9.sctx",
+      "animals02_0.sctx",
+      "animals02_1.sctx",
+      "animals02_2.sctx",
+      "animals02_3.sctx",
+      "animals02_4.sctx",
+      "animals03_0.sctx",
+      "animals03_1.sctx",
+      "animals03_2.sctx",
+      "animals03_3.sctx",
+      "animals03_4.sctx",
+      "animals03_5.sctx",
+      "animals03_6.sctx",
+      "animals04_0.sctx",
+      "animals04_1.sctx",
+      "animals04_2.sctx",
+      "animals04_3.sctx",
+      "animals04_4.sctx",
+      "animals04_5.sctx",
+      "animals04_6.sctx",
+      "animals04_7.sctx",
+      "animals04_8.sctx",
+      "animals04_9.sctx",
+      "animals05_0.sctx",
+      "animals05_1.sctx",
+      "animals05_2.sctx",
+      "animals05_3.sctx",
+      "animals05_4.sctx",
+      "animals05_5.sctx",
+      "animals05_6.sctx",
+      "animals05_7.sctx",
+      "animals05_8.sctx",
+      "animals05_9.sctx",
+      "animal_accessories_0.sctx",
+      "animal_accessories_1.sctx"
+    ],
+    "note": "All animals, animal seasonal sets, and animal accessories are transparent at SCTX atlas level. Cow-feed bot templates remain separate under templates/."
+  },
+  "cow_pasture_foremost_injection": {
+    "assets": {
+      "ground": "pasture_cow",
+      "fence_walls": "fence_cow01",
+      "removed": "cow_trough_01"
+    },
+    "note": "Cow pasture is split across atlas 2/0/6. Ground+CP is atlas 2, fence/walls atlas 0, removable trough/detail atlas 6. Animals remain handled by animals_* invisible payloads.",
+    "results": [
+      {
+        "target": "buildings_new_2.sctx",
+        "source": "buildings_new.sc pasture_cow triangle mask",
+        "changed_pixels_blackened": 288971,
+        "tag": "CP",
+        "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/buildings_new_2_cow_ground_cp_foremost.sctx",
+        "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_buildings_new_2.nxrth",
+        "preview": "Tagged_Corrected/animal_feed_injection/previews/cow_ground_cp_foremost_buildings_new_2_before_after.png",
+        "note": "Cow pasture ground is blackened and CP is drawn last in solid white on this atlas."
+      },
+      {
+        "target": "buildings_new_0.sctx",
+        "source": "existing feed/dairy patch plus buildings_new.sc fence_cow01 triangle mask",
+        "changed_pixels_blackened_cow_fence": 196948,
+        "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/buildings_new_0_feed_maker_fm_dairy_dy_cow_fence.sctx",
+        "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_buildings_new_0.nxrth",
+        "preview": "Tagged_Corrected/animal_feed_injection/previews/cow_fence_black_buildings_new_0_before_after.png",
+        "note": "Preserves existing feed mill FM and dairy DY edits, then blackens only cow pasture fence/walls."
+      },
+      {
+        "target": "buildings_new_6.sctx",
+        "source": "buildings_new.sc cow_trough_01 triangle mask",
+        "changed_pixels_erased": 44282,
+        "raw_sctx_copy": "HD/x64/Release/injecthacks/extra_visuals/buildings_new_6_cow_trough_removed.sctx",
+        "encrypted_payload": "HD/x64/Release/injecthacks/inject_extra_buildings_new_6.nxrth",
+        "preview": "Tagged_Corrected/animal_feed_injection/previews/cow_trough_removed_buildings_new_6_before_after.png",
+        "note": "Cow trough/feed box details are made fully transparent, not black."
+      }
+    ]
+  }
+}

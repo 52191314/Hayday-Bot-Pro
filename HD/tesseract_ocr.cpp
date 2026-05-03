@@ -11,7 +11,7 @@
 #include <limits>
 
 #pragma comment(lib, "tesseract55.lib")
-#pragma comment(lib, "leptonica-1.85.0.lib")
+#pragma comment(lib, "leptonica-1.87.0.lib")
 
 // =========================================================================
 // GLOBAL TESSERACT ENGINE

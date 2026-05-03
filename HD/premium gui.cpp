@@ -1981,9 +1981,9 @@ std::string GetRuntimeStr() {
     if (!anyRunning) return "00:00:00";
     auto now = std::chrono::steady_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - g_BotStartTime).count();
-    int h = elapsed / 3600;
-    int m = (elapsed % 3600) / 60;
-    int s = elapsed % 60;
+    int h = static_cast<int>(elapsed / 3600);
+    int m = static_cast<int>((elapsed % 3600) / 60);
+    int s = static_cast<int>(elapsed % 60);
     char buf[32];
     sprintf(buf, "%02d:%02d:%02d", h, m, s);
     return std::string(buf);
@@ -1992,39 +1992,40 @@ std::string GetRuntimeStr() {
 void SetPremiumTheme() {
     ImGuiStyle& style = ImGui::GetStyle();
     ImGui::StyleColorsLight();
-    style.WindowRounding = 0.0f;
-    style.ChildRounding = 0.0f;
-    style.FrameRounding = 2.0f;
-    style.GrabRounding = 2.0f;
-    style.TabRounding = 0.0f;
+    style.WindowRounding = 6.0f;
+    style.ChildRounding = 6.0f;
+    style.FrameRounding = 5.0f;
+    style.GrabRounding = 5.0f;
+    style.TabRounding = 5.0f;
     style.ScrollbarRounding = 0.0f;
     style.WindowBorderSize = 1.0f;
     style.ChildBorderSize = 1.0f;
     style.FrameBorderSize = 1.0f;
-    style.ItemSpacing = ImVec2(8.0f, 6.0f);
-    style.WindowPadding = ImVec2(10.0f, 8.0f);
-    style.FramePadding = ImVec2(8.0f, 4.0f);
-    style.Colors[ImGuiCol_WindowBg] = ImVec4(0.94f, 0.94f, 0.94f, 1.00f);
-    style.Colors[ImGuiCol_ChildBg] = ImVec4(0.93f, 0.93f, 0.93f, 1.00f);
-    style.Colors[ImGuiCol_TitleBg] = ImVec4(0.22f, 0.22f, 0.22f, 1.00f);
-    style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.22f, 0.22f, 0.22f, 1.00f);
-    style.Colors[ImGuiCol_Tab] = ImVec4(0.86f, 0.86f, 0.86f, 1.00f);
-    style.Colors[ImGuiCol_TabHovered] = ImVec4(0.78f, 0.86f, 0.94f, 1.00f);
-    style.Colors[ImGuiCol_TabActive] = ImVec4(0.98f, 0.98f, 0.98f, 1.00f);
-    style.Colors[ImGuiCol_Button] = ImVec4(0.84f, 0.84f, 0.84f, 1.00f);
-    style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.76f, 0.84f, 0.94f, 1.00f);
-    style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.60f, 0.74f, 0.90f, 1.00f);
-    style.Colors[ImGuiCol_Header] = ImVec4(0.70f, 0.82f, 0.96f, 1.00f);
-    style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.60f, 0.76f, 0.94f, 1.00f);
-    style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.45f, 0.66f, 0.88f, 1.00f);
-    style.Colors[ImGuiCol_FrameBg] = ImVec4(0.985f, 0.985f, 0.985f, 1.00f);
-    style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.94f, 0.96f, 0.99f, 1.00f);
-    style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.90f, 0.94f, 0.99f, 1.00f);
-    style.Colors[ImGuiCol_CheckMark] = ImVec4(0.18f, 0.46f, 0.78f, 1.00f);
-    style.Colors[ImGuiCol_SliderGrab] = ImVec4(0.30f, 0.58f, 0.88f, 1.00f);
-    style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.18f, 0.46f, 0.78f, 1.00f);
-    style.Colors[ImGuiCol_Text] = ImVec4(0.05f, 0.05f, 0.05f, 1.00f);
-    style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.30f, 0.30f, 0.30f, 1.00f);
+    style.ItemSpacing = ImVec2(9.0f, 7.0f);
+    style.WindowPadding = ImVec2(12.0f, 10.0f);
+    style.FramePadding = ImVec2(9.0f, 5.0f);
+    style.Colors[ImGuiCol_WindowBg] = ImVec4(0.955f, 0.960f, 0.965f, 1.00f);
+    style.Colors[ImGuiCol_ChildBg] = ImVec4(0.995f, 0.995f, 0.990f, 1.00f);
+    style.Colors[ImGuiCol_Border] = ImVec4(0.72f, 0.75f, 0.78f, 1.00f);
+    style.Colors[ImGuiCol_TitleBg] = ImVec4(0.20f, 0.23f, 0.25f, 1.00f);
+    style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.20f, 0.23f, 0.25f, 1.00f);
+    style.Colors[ImGuiCol_Tab] = ImVec4(0.88f, 0.90f, 0.91f, 1.00f);
+    style.Colors[ImGuiCol_TabHovered] = ImVec4(0.82f, 0.88f, 0.94f, 1.00f);
+    style.Colors[ImGuiCol_TabActive] = ImVec4(0.995f, 0.995f, 0.990f, 1.00f);
+    style.Colors[ImGuiCol_Button] = ImVec4(0.87f, 0.89f, 0.90f, 1.00f);
+    style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.79f, 0.86f, 0.93f, 1.00f);
+    style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.62f, 0.75f, 0.88f, 1.00f);
+    style.Colors[ImGuiCol_Header] = ImVec4(0.82f, 0.88f, 0.94f, 1.00f);
+    style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.75f, 0.84f, 0.92f, 1.00f);
+    style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.62f, 0.76f, 0.89f, 1.00f);
+    style.Colors[ImGuiCol_FrameBg] = ImVec4(1.00f, 1.00f, 0.995f, 1.00f);
+    style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.94f, 0.97f, 0.99f, 1.00f);
+    style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.90f, 0.95f, 0.99f, 1.00f);
+    style.Colors[ImGuiCol_CheckMark] = ImVec4(0.12f, 0.42f, 0.68f, 1.00f);
+    style.Colors[ImGuiCol_SliderGrab] = ImVec4(0.25f, 0.55f, 0.76f, 1.00f);
+    style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.10f, 0.42f, 0.68f, 1.00f);
+    style.Colors[ImGuiCol_Text] = ImVec4(0.08f, 0.09f, 0.10f, 1.00f);
+    style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.39f, 0.42f, 0.45f, 1.00f);
 }
 
 void RenderLogo() {
@@ -2164,20 +2165,124 @@ void RenderTemplateRow(const char* label, char* buffer, size_t bufferSize, std::
 static int g_ClassicSelectedInstance = 0;
 static int g_ClassicSelectedSlot = 0;
 
+enum ClassicPageId {
+    ClassicPage_Start = 0,
+    ClassicPage_Accounts,
+    ClassicPage_Farm,
+    ClassicPage_Templates,
+    ClassicPage_Logs,
+    ClassicPage_Settings
+};
+
+static int g_ClassicPage = ClassicPage_Start;
+
 static void ClassicBeginPanel(const char* title, ImVec2 size = ImVec2(0, 0)) {
     ImGui::BeginChild(title, size, true);
-    ImGui::TextUnformatted(title);
+    ImGui::TextColored(ImVec4(0.12f, 0.24f, 0.34f, 1.0f), "%s", title);
     ImGui::Separator();
     ImGui::Spacing();
 }
 
 static bool ClassicButton(const char* label, const ImVec4& color, ImVec2 size = ImVec2(-1, 28)) {
+    float luminance = (0.2126f * color.x) + (0.7152f * color.y) + (0.0722f * color.z);
+    ImVec4 textColor = luminance < 0.58f ? ImVec4(1.0f, 1.0f, 1.0f, 1.0f) : ImVec4(0.08f, 0.09f, 0.10f, 1.0f);
     ImGui::PushStyleColor(ImGuiCol_Button, color);
     ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4((std::min)(color.x + 0.08f, 1.0f), (std::min)(color.y + 0.08f, 1.0f), (std::min)(color.z + 0.08f, 1.0f), 1.0f));
     ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4((std::max)(color.x - 0.08f, 0.0f), (std::max)(color.y - 0.08f, 0.0f), (std::max)(color.z - 0.08f, 0.0f), 1.0f));
+    ImGui::PushStyleColor(ImGuiCol_Text, textColor);
     bool clicked = ImGui::Button(label, size);
-    ImGui::PopStyleColor(3);
+    ImGui::PopStyleColor(4);
     return clicked;
+}
+
+static const char* ClassicPageTitle(int page) {
+    switch (page) {
+    case ClassicPage_Start: return "Start";
+    case ClassicPage_Accounts: return "Accounts";
+    case ClassicPage_Farm: return "Farm";
+    case ClassicPage_Templates: return "Templates";
+    case ClassicPage_Logs: return "Logs";
+    case ClassicPage_Settings: return "Settings";
+    default: return "Start";
+    }
+}
+
+static std::string ClassicShortText(const std::string& text, size_t maxLen) {
+    if (text.length() <= maxLen) return text;
+    if (maxLen <= 2) return text.substr(0, maxLen);
+    return text.substr(0, maxLen - 2) + "..";
+}
+
+static std::string ClassicAccountDisplayName(const AccountSlot& acc) {
+    if (acc.hasFile && !acc.farmName.empty()) return acc.farmName;
+    if (acc.hasFile && !acc.name.empty()) return acc.name;
+    if (acc.hasFile) return "Saved account";
+    return "Empty slot";
+}
+
+static int ClassicSavedAccountCount(const BotInstance& bot) {
+    int count = 0;
+    for (int i = 0; i < MAX_ACCOUNT_SLOTS; ++i) {
+        if (bot.accounts[i].hasFile) ++count;
+    }
+    return count;
+}
+
+static int ClassicRunnableAccountCount(const BotInstance& bot) {
+    auto skipMask = ParseMultiModeSkipMask(bot.multiModeSkipSlots);
+    int count = 0;
+    for (int i = 0; i < MAX_ACCOUNT_SLOTS; ++i) {
+        if (bot.accounts[i].hasFile && !IsMultiModeSlotSkipped(skipMask, i)) ++count;
+    }
+    return count;
+}
+
+static ImVec4 ClassicBotStatusColor(const BotInstance& bot) {
+    if (!bot.isActive) return ImVec4(0.47f, 0.49f, 0.51f, 1.0f);
+    if (!bot.isRunning) return ImVec4(0.28f, 0.50f, 0.68f, 1.0f);
+    if (bot.statusText.find("ERROR") != std::string::npos || bot.statusText.find("FAIL") != std::string::npos) return ImVec4(0.72f, 0.12f, 0.12f, 1.0f);
+    if (bot.statusText.find("WAIT") != std::string::npos || bot.statusText.find("LOAD") != std::string::npos) return ImVec4(0.78f, 0.48f, 0.08f, 1.0f);
+    return ImVec4(0.10f, 0.55f, 0.24f, 1.0f);
+}
+
+static std::string ClassicBotStatusLabel(const BotInstance& bot) {
+    if (!bot.isActive) return "Disabled";
+    if (!bot.isRunning) return "Idle";
+    if (!bot.statusText.empty()) return ClassicShortText(bot.statusText, 24);
+    return "Running";
+}
+
+static void ClassicStatusPill(const char* text, const ImVec4& bg, const ImVec4& fg = ImVec4(1, 1, 1, 1)) {
+    ImDrawList* drawList = ImGui::GetWindowDrawList();
+    ImVec2 p = ImGui::GetCursorScreenPos();
+    ImVec2 textSize = ImGui::CalcTextSize(text);
+    ImVec2 pad = ImVec2(8.0f, 4.0f);
+    ImVec2 size = ImVec2(textSize.x + pad.x * 2.0f, textSize.y + pad.y * 2.0f);
+    drawList->AddRectFilled(p, ImVec2(p.x + size.x, p.y + size.y), ImGui::GetColorU32(bg), 5.0f);
+    drawList->AddText(ImVec2(p.x + pad.x, p.y + pad.y), ImGui::GetColorU32(fg), text);
+    ImGui::Dummy(size);
+}
+
+static void ClassicHealthRow(const char* label, bool ok, const char* detail = nullptr) {
+    ClassicStatusPill(ok ? "OK" : "FIX", ok ? ImVec4(0.10f, 0.55f, 0.24f, 1.0f) : ImVec4(0.78f, 0.48f, 0.08f, 1.0f));
+    ImGui::SameLine();
+    ImGui::TextUnformatted(label);
+    if (detail && detail[0] != '\0') {
+        ImGui::SameLine();
+        ImGui::TextDisabled("%s", detail);
+    }
+}
+
+static void ClassicNavItem(const char* label, int page) {
+    bool selected = (g_ClassicPage == page);
+    if (selected) {
+        ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.62f, 0.76f, 0.89f, 1.0f));
+        ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.62f, 0.76f, 0.89f, 1.0f));
+    }
+    if (ImGui::Selectable(label, selected, 0, ImVec2(0, 32))) {
+        g_ClassicPage = page;
+    }
+    if (selected) ImGui::PopStyleColor(2);
 }
 
 static void ClassicInstanceCombo(const char* label) {
@@ -2325,6 +2430,168 @@ static void ClassicStartStopBot(int instanceId) {
     }
 }
 
+static void ClassicDrawTopStatus() {
+    BotInstance& bot = g_Bots[g_ClassicSelectedInstance];
+    int slot = (std::max)(0, (std::min)(MAX_ACCOUNT_SLOTS - 1, bot.currentAccountIndex));
+    AccountSlot& acc = bot.accounts[slot];
+    std::string status = ClassicBotStatusLabel(bot);
+    std::string accountName = ClassicShortText(ClassicAccountDisplayName(acc), 26);
+    int savedCount = ClassicSavedAccountCount(bot);
+    int runnableCount = ClassicRunnableAccountCount(bot);
+
+    ImGui::BeginChild("ClassicStatusHeader", ImVec2(0, 94), true);
+    ImGui::Columns(2, "ClassicStatusHeaderCols", false);
+    ImGui::SetColumnWidth(0, (std::max)(420.0f, ImGui::GetWindowWidth() - 286.0f));
+    ImGui::TextColored(ImVec4(0.12f, 0.24f, 0.34f, 1.0f), "%s", ClassicPageTitle(g_ClassicPage));
+    ImGui::SameLine();
+    ClassicStatusPill(status.c_str(), ClassicBotStatusColor(bot));
+    ImGui::TextDisabled("Emu %d  |  Slot %d: %s  |  Saved %d / Runnable %d  |  Runtime %s",
+        g_ClassicSelectedInstance + 1, slot + 1, accountName.c_str(), savedCount, runnableCount, GetRuntimeStr().c_str());
+
+    ClassicStatusPill(g_AdbValid ? "ADB OK" : "ADB Missing", g_AdbValid ? ImVec4(0.10f, 0.55f, 0.24f, 1.0f) : ImVec4(0.72f, 0.12f, 0.12f, 1.0f));
+    ImGui::SameLine();
+    ClassicStatusPill(g_MEmuValid ? "Console OK" : "Console Missing", g_MEmuValid ? ImVec4(0.10f, 0.55f, 0.24f, 1.0f) : ImVec4(0.72f, 0.12f, 0.12f, 1.0f));
+    ImGui::SameLine();
+    ClassicStatusPill(bot.isActive ? "Enabled" : "Disabled", bot.isActive ? ImVec4(0.28f, 0.50f, 0.68f, 1.0f) : ImVec4(0.47f, 0.49f, 0.51f, 1.0f));
+    ImGui::SameLine();
+    ClassicStatusPill(bot.useMultiMode ? "Multi Mode" : "Single Mode", ImVec4(0.36f, 0.43f, 0.50f, 1.0f));
+
+    ImGui::NextColumn();
+    if (ClassicButton(bot.isRunning ? "Stop Bot" : "Start Bot", bot.isRunning ? ImVec4(0.84f, 0.30f, 0.30f, 1.0f) : ImVec4(0.20f, 0.62f, 0.34f, 1.0f), ImVec2(-1, 30))) {
+        ClassicStartStopBot(g_ClassicSelectedInstance);
+    }
+    if (ClassicButton("Launch Game", ImVec4(0.25f, 0.52f, 0.78f, 1.0f), ImVec2(-1, 30))) {
+        StartMEmuAndGame(g_ClassicSelectedInstance);
+    }
+    ImGui::Columns(1);
+    ImGui::EndChild();
+}
+
+static void ClassicStartTab() {
+    BotInstance& bot = g_Bots[g_ClassicSelectedInstance];
+    g_ClassicSelectedSlot = (std::max)(0, (std::min)(MAX_ACCOUNT_SLOTS - 1, g_ClassicSelectedSlot));
+    AccountSlot* acc = &bot.accounts[g_ClassicSelectedSlot];
+
+    float fullWidth = ImGui::GetContentRegionAvail().x;
+    ImGui::Columns(2, "ClassicStartCols", false);
+    ImGui::SetColumnWidth(0, (std::max)(420.0f, fullWidth * 0.48f));
+
+    ClassicBeginPanel("Run", ImVec2(0, 224));
+    ImGui::Text("Selected emulator: Emu %d", g_ClassicSelectedInstance + 1);
+    ImGui::SameLine();
+    ClassicStatusPill(ClassicBotStatusLabel(bot).c_str(), ClassicBotStatusColor(bot));
+    ImGui::Spacing();
+    if (ClassicButton(bot.isRunning ? "Stop Bot" : "Start Bot", bot.isRunning ? ImVec4(0.84f, 0.30f, 0.30f, 1.0f) : ImVec4(0.20f, 0.62f, 0.34f, 1.0f), ImVec2(-1, 42))) {
+        ClassicStartStopBot(g_ClassicSelectedInstance);
+    }
+    if (ClassicButton("Launch Emulator + Hay Day", ImVec4(0.25f, 0.52f, 0.78f, 1.0f), ImVec2(-1, 34))) {
+        StartMEmuAndGame(g_ClassicSelectedInstance);
+    }
+    if (ClassicButton("Apply Fix / Inject Files", ImVec4(0.35f, 0.45f, 0.58f, 1.0f), ImVec2(-1, 30))) {
+        InjectImportantFiles(g_ClassicSelectedInstance);
+    }
+    if (ClassicButton("New Account: Clear Game Data", ImVec4(0.78f, 0.48f, 0.08f, 1.0f), ImVec2(-1, 30))) {
+        int targetInst = g_ClassicSelectedInstance;
+        std::thread([targetInst]() {
+            AddLog(targetInst, Tr("Wiping game data to create new account..."), ImVec4(1, 0.5f, 0, 1));
+            RunAdbCommand(targetInst, "shell am force-stop com.supercell.hayday");
+            RunAdbCommand(targetInst, "shell rm /data/data/com.supercell.hayday/shared_prefs/storage.xml");
+            RunAdbCommand(targetInst, "shell rm /data/data/com.supercell.hayday/shared_prefs/storage_new.xml");
+            AddLog(targetInst, Tr("Data wiped successfully! Launch game to start fresh."), ImVec4(0, 1, 0, 1));
+            }).detach();
+    }
+    ImGui::EndChild();
+
+    ClassicBeginPanel("Mode", ImVec2(0, 0));
+    if (ImGui::Checkbox("Enable this emulator", &bot.isActive)) SaveConfig();
+    int mode = bot.useMultiMode ? 1 : 0;
+    if (ImGui::RadioButton("Single slot", mode == 0)) {
+        bot.useSingleMode = true;
+        bot.useMultiMode = false;
+        SaveConfig();
+    }
+    ImGui::SameLine();
+    if (ImGui::RadioButton("Account rotation", mode == 1)) {
+        bot.useSingleMode = false;
+        bot.useMultiMode = true;
+        SaveConfig();
+    }
+    const char* crops[] = { "Wheat (120s)", "Corn (300s)", "Carrot (600s)", "Soybean (1200s)", "Sugarcane (1800s)" };
+    ImGui::SetNextItemWidth(-1);
+    if (ImGui::Combo("Crop", &bot.testCropMode, crops, IM_ARRAYSIZE(crops))) SaveConfig();
+    if (ImGui::Checkbox("Random sale cycle", &bot.enableRandomSaleCycle)) SaveConfig();
+    ImGui::SetNextItemWidth(-1);
+    ImGui::InputTextWithHint("Skipped slots", "2, 5-7", g_MultiModeSkipBuf[g_ClassicSelectedInstance], IM_ARRAYSIZE(g_MultiModeSkipBuf[g_ClassicSelectedInstance]));
+    if (ImGui::IsItemDeactivatedAfterEdit()) {
+        bot.multiModeSkipSlots = g_MultiModeSkipBuf[g_ClassicSelectedInstance];
+        SaveConfig();
+    }
+    ImGui::EndChild();
+
+    ImGui::NextColumn();
+    ClassicBeginPanel("Selected Account", ImVec2(0, 224));
+    std::string slotPreview = std::to_string(g_ClassicSelectedSlot + 1) + " - " + ClassicShortText(ClassicAccountDisplayName(*acc), 34);
+    ImGui::SetNextItemWidth(-1);
+    if (ImGui::BeginCombo("Slot", slotPreview.c_str())) {
+        for (int slot = 0; slot < MAX_ACCOUNT_SLOTS; ++slot) {
+            AccountSlot& rowAcc = bot.accounts[slot];
+            std::string rowLabel = std::to_string(slot + 1) + " - " + ClassicShortText(ClassicAccountDisplayName(rowAcc), 36);
+            bool selected = (slot == g_ClassicSelectedSlot);
+            if (ImGui::Selectable(rowLabel.c_str(), selected)) {
+                g_ClassicSelectedSlot = slot;
+                bot.currentAccountIndex = slot;
+                acc = &bot.accounts[g_ClassicSelectedSlot];
+            }
+            if (selected) ImGui::SetItemDefaultFocus();
+        }
+        ImGui::EndCombo();
+    }
+    acc = &bot.accounts[g_ClassicSelectedSlot];
+    ImGui::Text("Slot %d", g_ClassicSelectedSlot + 1);
+    ImGui::SameLine();
+    ClassicStatusPill(acc->hasFile ? "Saved" : "Empty", acc->hasFile ? ImVec4(0.10f, 0.55f, 0.24f, 1.0f) : ImVec4(0.47f, 0.49f, 0.51f, 1.0f));
+    ImGui::Text("Name: %s", ClassicShortText(ClassicAccountDisplayName(*acc), 38).c_str());
+    ImGui::Text("Level: %d", acc->level);
+    ImGui::Text("Coins: %d", acc->coinAmount);
+    ImGui::Text("Tag: %s", acc->playerTag.empty() ? "-" : acc->playerTag.c_str());
+    ImGui::Spacing();
+    if (ClassicButton("Save Current Game to Slot", ImVec4(0.20f, 0.62f, 0.34f, 1.0f), ImVec2(-1, 30))) {
+        int inst = g_ClassicSelectedInstance, slot = g_ClassicSelectedSlot;
+        std::thread([inst, slot]() { SaveAccountToSlot(inst, slot); }).detach();
+    }
+    bool canLoad = acc->hasFile && bot.isActive && strlen(bot.adbSerial) > 0;
+    if (!canLoad) ImGui::BeginDisabled();
+    if (ClassicButton("Load Selected Slot", ImVec4(0.25f, 0.52f, 0.78f, 1.0f), ImVec2(-1, 30))) {
+        int inst = g_ClassicSelectedInstance, slot = g_ClassicSelectedSlot;
+        bot.currentAccountIndex = slot;
+        std::thread([inst, slot]() { LoadAccountFromSlot(inst, slot); }).detach();
+    }
+    if (!canLoad) ImGui::EndDisabled();
+    if (ClassicButton("Open Account Manager", ImVec4(0.60f, 0.64f, 0.67f, 1.0f), ImVec2(-1, 28))) {
+        g_ClassicPage = ClassicPage_Accounts;
+    }
+    ImGui::EndChild();
+
+    ClassicBeginPanel("Setup Health", ImVec2(0, 0));
+    ClassicHealthRow("ADB path", g_AdbValid);
+    ClassicHealthRow("Emulator console path", g_MEmuValid);
+    ClassicHealthRow("ADB serial", strlen(bot.adbSerial) > 0, strlen(bot.adbSerial) > 0 ? bot.adbSerial : "");
+    ClassicHealthRow("Saved accounts", ClassicSavedAccountCount(bot) > 0);
+    ClassicHealthRow("Runnable slots", ClassicRunnableAccountCount(bot) > 0);
+    ImGui::Spacing();
+    if (ClassicButton("Validate Paths", ImVec4(0.20f, 0.62f, 0.34f, 1.0f), ImVec2(140, 28))) {
+        SaveConfig();
+        ValidatePaths();
+    }
+    ImGui::SameLine();
+    if (ClassicButton("Open Settings", ImVec4(0.60f, 0.64f, 0.67f, 1.0f), ImVec2(140, 28))) {
+        g_ClassicPage = ClassicPage_Settings;
+    }
+    ImGui::EndChild();
+
+    ImGui::Columns(1);
+}
+
 static void ClassicConnectionTab() {
     BotInstance& bot = g_Bots[g_ClassicSelectedInstance];
     ImGui::Columns(3, "DashConnCols", false);
@@ -2422,13 +2689,13 @@ static void ClassicAccountManagerTab() {
         ImGui::PopID();
     }
     ImGui::Separator();
-    if (ClassicButton("Grab Account", ImVec4(0.34f, 0.72f, 0.34f, 1.0f), ImVec2(-1, 24))) {
+    if (ClassicButton("Save Current Game to Slot", ImVec4(0.34f, 0.72f, 0.34f, 1.0f), ImVec2(-1, 24))) {
         int inst = g_ClassicSelectedInstance, slot = g_ClassicSelectedSlot;
         std::thread([inst, slot]() { SaveAccountToSlot(inst, slot); }).detach();
     }
     bool canLoad = acc.hasFile && bot.isActive && strlen(bot.adbSerial) > 0;
     if (!canLoad) ImGui::BeginDisabled();
-    if (ClassicButton("Load Account", ImVec4(0.26f, 0.58f, 0.88f, 1.0f), ImVec2(-1, 24))) {
+    if (ClassicButton("Load Selected Slot", ImVec4(0.26f, 0.58f, 0.88f, 1.0f), ImVec2(-1, 24))) {
         int inst = g_ClassicSelectedInstance, slot = g_ClassicSelectedSlot;
         bot.currentAccountIndex = slot;
         std::thread([inst, slot]() { LoadAccountFromSlot(inst, slot); }).detach();
@@ -3123,8 +3390,17 @@ static void ClassicSettingsTab() {
 }
 
 static void RenderSidebar() {
-    ImGui::BeginChild("Sidebar", ImVec2(152, 0), true);
-    ImGui::TextColored(ImVec4(0.5f, 0.7f, 1.0f, 1.0f), "INSTANCES");
+    ImGui::BeginChild("Sidebar", ImVec2(178, 0), true);
+    ImGui::TextColored(ImVec4(0.12f, 0.24f, 0.34f, 1.0f), "WORKFLOW");
+    ImGui::Separator();
+    ClassicNavItem("Start", ClassicPage_Start);
+    ClassicNavItem("Accounts", ClassicPage_Accounts);
+    ClassicNavItem("Farm", ClassicPage_Farm);
+    ClassicNavItem("Templates", ClassicPage_Templates);
+    ClassicNavItem("Logs", ClassicPage_Logs);
+    ClassicNavItem("Settings", ClassicPage_Settings);
+    ImGui::Spacing();
+    ImGui::TextColored(ImVec4(0.12f, 0.24f, 0.34f, 1.0f), "EMULATORS");
     ImGui::Separator();
     for (int i = 0; i < 6; ++i) {
         BotInstance& bot = g_Bots[i];
@@ -3133,15 +3409,15 @@ static void RenderSidebar() {
         ImVec4 dotColor = bot.isRunning ? ImVec4(0.2f, 0.9f, 0.3f, 1.0f) : ImVec4(0.5f, 0.5f, 0.5f, 1.0f);
         if (bot.isRunning && bot.statusText.find("WAIT") != std::string::npos) dotColor = ImVec4(1.0f, 0.85f, 0.2f, 1.0f);
 
-        if (ImGui::Selectable("##inst", selected, 0, ImVec2(0, 52))) {
+        if (ImGui::Selectable("##inst", selected, 0, ImVec2(0, 48))) {
             g_ClassicSelectedInstance = i;
             g_SelectedInstanceUI = i;
         }
         ImGui::SameLine(8.0f);
         ImGui::BeginGroup();
-        ImGui::TextColored(dotColor, "%s", bot.isRunning ? "@ " : "  ");
-        ImGui::SameLine();
         ImGui::Text("Emu %d", i + 1);
+        ImGui::SameLine();
+        ImGui::TextColored(dotColor, "%s", bot.isRunning ? "RUN" : (bot.isActive ? "IDLE" : "OFF"));
         AccountSlot& acc = bot.accounts[(std::max)(0, (std::min)(MAX_ACCOUNT_SLOTS - 1, bot.currentAccountIndex))];
         std::string accLabel = acc.hasFile && !acc.farmName.empty() ? acc.farmName : "No Account";
         if (accLabel.length() > 14) accLabel = accLabel.substr(0, 12) + "..";
@@ -3165,25 +3441,43 @@ static void RenderClassicApp() {
     ImGui::SetNextWindowSize(ImVec2(viewport->Size.x, viewport->Size.y - 30.0f));
 
     ImGui::Begin("MainApp", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus);
-    ImGui::TextUnformatted("Hayday Bot v2.7.6");
+    ImGui::TextUnformatted("Hay Day Bot v2.7.6");
     ImGui::SameLine(ImGui::GetWindowWidth() - 470.0f);
     ImGui::TextColored(ImVec4(0.10f, 0.45f, 0.10f, 1.0f), "Local build | Customer: %s | Runtime: %s", g_Username, GetRuntimeStr().c_str());
 
     float logStripHeight = 130.0f;
     float contentHeight = ImGui::GetContentRegionAvail().y - logStripHeight - 8.0f;
 
-    // === TOP AREA: Sidebar + Tabs ===
+    // === TOP AREA: Sidebar + current workflow ===
     ImGui::BeginChild("TopArea", ImVec2(0, contentHeight), false);
     RenderSidebar();
     ImGui::SameLine();
     ImGui::BeginChild("MainContent", ImVec2(0, 0), false);
-    if (ImGui::BeginTabBar("MainTabs")) {
-        if (ImGui::BeginTabItem("Dashboard")) { ClassicConnectionTab(); ClassicBotControlTab(); ClassicAccountManagerTab(); ImGui::EndTabItem(); }
-        if (ImGui::BeginTabItem("Farm Config")) { ClassicFarmConfigTab(); ImGui::EndTabItem(); }
-        if (ImGui::BeginTabItem("Templates")) { ClassicTemplateManagerTab(); ImGui::EndTabItem(); }
-        if (ImGui::BeginTabItem("Logs")) { ClassicLogsTab(); ImGui::EndTabItem(); }
-        if (ImGui::BeginTabItem("Settings")) { ClassicSettingsTab(); ImGui::EndTabItem(); }
-        ImGui::EndTabBar();
+    if (g_ClassicPage < ClassicPage_Start || g_ClassicPage > ClassicPage_Settings) g_ClassicPage = ClassicPage_Start;
+    ClassicDrawTopStatus();
+    ImGui::Spacing();
+    switch (g_ClassicPage) {
+    case ClassicPage_Start:
+        ClassicStartTab();
+        break;
+    case ClassicPage_Accounts:
+        ClassicAccountManagerTab();
+        break;
+    case ClassicPage_Farm:
+        ClassicFarmConfigTab();
+        break;
+    case ClassicPage_Templates:
+        ClassicTemplateManagerTab();
+        break;
+    case ClassicPage_Logs:
+        ClassicLogsTab();
+        break;
+    case ClassicPage_Settings:
+        ClassicSettingsTab();
+        break;
+    default:
+        ClassicStartTab();
+        break;
     }
     ImGui::EndChild();
     ImGui::EndChild();
@@ -3191,8 +3485,8 @@ static void RenderClassicApp() {
     // === BOTTOM: Log Strip ===
     ImGui::Separator();
     ImGui::BeginChild("LogStrip", ImVec2(0, logStripHeight), true);
-    ImGui::Text("Logs");
-    ImGui::SameLine(60);
+    ImGui::Text("Activity");
+    ImGui::SameLine(74);
     if (ImGui::SmallButton("Clear")) ClassicClearLogs();
     ImGui::SameLine();
     ImGui::Checkbox("Auto##scroll", &g_AutoScrollLogs);
@@ -3201,6 +3495,8 @@ static void RenderClassicApp() {
     ImGui::SameLine();
     ImGui::SetNextItemWidth(260.0f);
     ImGui::InputTextWithHint("##logstripsearch", "Search logs", g_LogSearchBuf, IM_ARRAYSIZE(g_LogSearchBuf));
+    ImGui::SameLine();
+    if (ImGui::SmallButton("Full Logs")) g_ClassicPage = ClassicPage_Logs;
     ClassicDrawLogs(logStripHeight - 34.0f);
     ImGui::EndChild();
 

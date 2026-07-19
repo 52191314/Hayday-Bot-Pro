@@ -1,0 +1,49 @@
+# Python virtual environment
+venv_frida_16_5_6/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Local logs and output files
+build_log.txt
+login_output.txt
+packet_*.bin
+live_storage_new.xml
+logs/
+
+# User back-ups and credentials
+Account_backup/
+credentials.json
+*.pem
+*.jks
+*.key
+
+# Nesting and builds
+build/
+*build/
+bin/
+obj/
+
+# Nested independent Git repositories (tracked separately)
+HD/
+third_party/
+
+# Large binary/resource/archive folders
+analysis_artifacts/
+source_packages/
+Reference_Assets/
+magisk_memu_boot/*
+!magisk_memu_boot/scripts/
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Compiled binary files
+*.apk
+*.idsig
+*.exe
+*.dll

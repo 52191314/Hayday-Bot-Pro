@@ -1,0 +1,112 @@
+{
+  "assets": [
+    {
+      "name": "pasture_cow",
+      "asset_name": "pasture_cow",
+      "tag": "CP",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_2/buildings_new_2.png",
+      "bbox": [
+        0,
+        0,
+        1948,
+        2031
+      ]
+    },
+    {
+      "name": "building_mill_01",
+      "asset_name": "building_mill_01",
+      "tag": "FM",
+      "image": "Decoded/hayday_assets_sctx/map_2/map_2.png",
+      "bbox": [
+        0,
+        0,
+        1015,
+        1482
+      ]
+    },
+    {
+      "name": "bakery_01",
+      "asset_name": "bakery_01",
+      "tag": "BK",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_0/buildings_new_0.png",
+      "bbox": [
+        799,
+        1851,
+        139,
+        133
+      ]
+    },
+    {
+      "name": "dairy_01",
+      "asset_name": "dairy_01",
+      "tag": "DY",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_2/buildings_new_2.png",
+      "bbox": [
+        56,
+        0,
+        1894,
+        1988
+      ]
+    },
+    {
+      "name": "sugarmill_01",
+      "asset_name": "sugarmill_01",
+      "tag": "SM",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_0/buildings_new_0.png",
+      "bbox": [
+        1040,
+        2296,
+        427,
+        122
+      ]
+    },
+    {
+      "name": "pasture_chicken",
+      "asset_name": "pasture_chicken",
+      "tag": "CH",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_6/buildings_new_6.png",
+      "bbox": [
+        0,
+        197,
+        1013,
+        1059
+      ]
+    },
+    {
+      "name": "pasture_pig",
+      "asset_name": "pasture_pig",
+      "tag": "PG",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_1/buildings_new_1.png",
+      "bbox": [
+        135,
+        523,
+        1349,
+        2223
+      ]
+    },
+    {
+      "name": "pasture_sheep",
+      "asset_name": "pasture_sheep",
+      "tag": "SH",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_6/buildings_new_6.png",
+      "bbox": [
+        0,
+        290,
+        1014,
+        517
+      ]
+    },
+    {
+      "name": "pasture_goat",
+      "asset_name": "pasture_goat",
+      "tag": "GT",
+      "image": "Decoded/hayday_assets_sctx/buildings_new_6/buildings_new_6.png",
+      "bbox": [
+        0,
+        290,
+        1015,
+        963
+      ]
+    }
+  ]
+}

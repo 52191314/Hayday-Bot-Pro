@@ -1,0 +1,12 @@
+Name,LevelLimit,ExportNamePostfix,Enabled,SnowFileName,SnowExportNames,TID
+String,int,String,boolean,String,String,String
+ChineseNewYear,9,_summer,false,sc/foreground.sc,snowflake01;snowflake02,TID_THEME_SUMMER
+Valentines,9,,true,,,TID_THEME_VALENTINES
+Easter,9,,true,,,TID_THEME_EASTER
+Summer,9,_summer,true,,,TID_THEME_SUMMER
+Halloween,9,_halloween,true,,,TID_THEME_HALLOWEEN
+Autumn,9,_autumn,true,,,TID_THEME_AUTUMN
+Winter,9,_summer,true,,,TID_THEME_SUMMER
+Christmas,9,_summer,true,,,TID_THEME_SUMMER
+NewYear,9,_summer,true,,,TID_THEME_SUMMER
+Ramadan,9,,true,,,TID_THEME_RAMADAN

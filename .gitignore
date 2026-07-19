@@ -4,6 +4,7 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+*.py[cod]
 
 # Local logs and output files
 build_log.txt
@@ -11,6 +12,7 @@ login_output.txt
 packet_*.bin
 live_storage_new.xml
 logs/
+crash_log.txt
 
 # User back-ups and credentials
 Account_backup/
@@ -18,12 +20,40 @@ credentials.json
 *.pem
 *.jks
 *.key
+Backups/
 
 # Nesting and builds
 build/
 *build/
 bin/
 obj/
+.vs/
+.idea/
+.vscode/
+*.suo
+*.user
+*.db
+*.opendb
+*.VC.db
+x64/
+x86/
+Debug/
+Release/
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.iobj
+*.ipdb
+
+# Local bot state
+nxrth_config.ini
+nxrth_inventory.ini
+templates/screenshot_*.png
+runtime/templates/screenshot_*.png
 
 # Nested independent Git repositories (tracked separately)
 HD/
@@ -35,15 +65,20 @@ source_packages/
 Reference_Assets/
 magisk_memu_boot/*
 !magisk_memu_boot/scripts/
-
-# IDE files
-.vscode/
-.idea/
-*.suo
-*.user
+*.zip
+*.fla
+Decoded/
+Extracted/
+TEX/
+CSV/
+SC/
+Tagged_Assets/
+Tagged_Corrected/
+Tagged_Test/
+codex_tmp/
+cow/
 
 # Compiled binary files
 *.apk
 *.idsig
-*.exe
-*.dll
+

@@ -228,6 +228,7 @@ Historical read-only data from the May 2026 reverse engineering investigation. S
 | File | Purpose |
 |------|---------|
 | `bot-architecture.md` | Bot design, account rotation, visual injection, crop detection |
+| `code-evaluation-framework.md` | Project Wheat audit rubric: surfaces, weights, checklists, severity |
 | `remaining-steps.md` | Tutorial-skip pipeline status (verified 2026-05-26) |
 | `runtime-logging-and-performance.md` | Logging defaults, vision config, crop markers |
 | `sctx-xcoder-patching.md` | Visual SCTX patching with XCoder toolchain |

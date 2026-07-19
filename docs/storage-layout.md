@@ -49,6 +49,15 @@ These moves were organizational only; no files were intentionally deleted.
 - Moved `animals.fla` and `buildings_new.fla` into `Reference_Assets`.
 - Moved the APKMirror `.apkm` package into `source_packages`.
 
+## July 2026 Move Log
+
+These moves were organizational and corrective only; no files were deleted.
+
+- Moved root-level build and login log files (`build_log.txt`, `login_output.txt`) into `analysis_artifacts\scratch_work`.
+- Moved decrypted `live_storage_new.xml` into `analysis_artifacts\account_exports`.
+- Moved packet captures (`packet_10100.bin`, `packet_20100.bin`) into `analysis_artifacts\loose_probe_outputs`.
+- Fixed root-level batch scripts (`run_headless.bat`, `run_proxy.bat`) to use relative `%~dp0` project path references rather than absolute ones.
+
 ## Before Moving More
 
 Check path references before moving any of these root-level folders:

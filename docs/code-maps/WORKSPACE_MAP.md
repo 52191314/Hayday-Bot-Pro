@@ -29,6 +29,7 @@ This workspace is a multi-repository, multi-language environment centered around
 | `Frida.md` | Frida hooking scripts and memory analysis commands. |
 | `SESSION_HISTORY.md` | Log of research, debug steps, and analysis sessions. |
 | `docs/bot-architecture.md` | High-level system design: visual injection, emulator coordination, and account rotation. |
+| `docs/code-evaluation-framework.md` | Project Wheat code-quality audit rubric (surfaces, scores, checklists). |
 | `docs/storage-encryption.md` | Details on `storage_new.xml` AES-128-ECB decryption/encryption. |
 | `docs/sctx-xcoder-patching.md` | Workflow for patching texture files with the XCoder toolchain. |
 | `docs/system-cert-injection-and-network-analysis.md` | Setup guide for mitmproxy CA trust in MEmu. |

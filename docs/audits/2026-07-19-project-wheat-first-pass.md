@@ -161,8 +161,8 @@ Surfaces scored per framework §4 (1–5, or N/A). Weighting method: **re-normal
 
 | Item | Status | Evidence |
 |------|--------|----------|
-| `.YaJing` write only after XML validation | **Y** | AccountFiles.cpp `SaveAccountToSlot` L795–802: `ValidateDecryptedAccountXml` before encrypting |
-| Legacy `.nxrth` migration is one-way safe (keeps backup) | **Y** | AccountFiles.cpp `MigrateLegacyAccountSlotIfNeeded` L317–366: validates, copies backup to `legacy_nxrth_backup/`, then encrypts to `.YaJing` |
+| `.Ahjie` write only after XML validation | **Y** | AccountFiles.cpp `SaveAccountToSlot` L795–802: `ValidateDecryptedAccountXml` before encrypting |
+| Legacy `.nxrth` migration is one-way safe (keeps backup) | **Y** | AccountFiles.cpp `MigrateLegacyAccountSlotIfNeeded` L317–366: validates, copies backup to `legacy_nxrth_backup/`, then encrypts to `.Ahjie` |
 | Logs never dump full session tokens / passwords | **Y** | No secrets observed in log paths inspected |
 | Config paths resolve under `%APPDATA%\NXRTH_Premium\` consistently | **Y** | Paths.cpp: uses `%APPDATA%\NXRTH_Premium\` as base |
 

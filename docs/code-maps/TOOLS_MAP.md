@@ -95,7 +95,7 @@ Reusable infrastructure modules extracted during the ongoing code migration.
 | **Paths** | `Paths.h`, `.cpp` | AppData path resolution, backup folder creation |
 | **Config** | `Config.h`, `.cpp` | Path validation |
 | **RuntimeRelease** | `RuntimeRelease.h`, `.cpp` | Runtime string formatting for UI/RPC |
-| **YaJingCrypto** | `YaJingCrypto.h`, `.cpp` | `.YaJing` file AES-256-GCM encrypt/decrypt |
+| **AhjieCrypto** | `AhjieCrypto.h`, `.cpp` | `.Ahjie` file AES-256-GCM encrypt/decrypt |
 | **EmulatorControl** | bot/`EmulatorControl.*` | Minitouch startup, watchdog, revive heartbeat, emulator factory |
 | **ScreenRecovery** | bot/`ScreenRecovery.*` | Cross detection, panel dismissal, zoom recovery |
 | **AccountFiles** | bot/`AccountFiles.*` | Account backup/restore, injection, zoom hack |
@@ -235,7 +235,7 @@ Historical read-only data from the May 2026 reverse engineering investigation. S
 | `storage-encryption.md` | `storage_new.xml` AES key derivation and decryption |
 | `storage-layout.md` | Top-level folder organization (last updated 2026-06-08) |
 | `system-cert-injection-and-network-analysis.md` | MITM proxy + cert injection approach |
-| `yajing-encryption.md` | `.YaJing` file format (AES-256-GCM) |
+| `ahjie-encryption.md` | `.Ahjie` file format (AES-256-GCM) |
 | `code-maps/TOOLS_MAP.md` | **This file** |
 | `code-maps/README.md` | Code-maps directory overview |
 

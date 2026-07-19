@@ -11,7 +11,7 @@ This document acts as a navigation map for the core C++ codebase of **Project Wh
 > [!IMPORTANT]
 > **Resolution Contract**: All coordinate-based inputs, window dimensions, and template images assume the MEmu/LDPlayer emulator is set to **640x480 resolution at 100 DPI**.
 > 
-> **Visual Injection Mode**: This bot does not rely heavily on CPU-heavy template image scanning. Instead, it injects modified texture files (`.YaJing` assets) that color-code key items (e.g., empty fields as Magenta, grown wheat as Cyan). The C++ bot scans for specific HSV color ranges on the screen. See [sctx-xcoder-patching.md](file:///D:/02_Projects/HD/HaydayMod/docs/sctx-xcoder-patching.md) for marker details.
+> **Visual Injection Mode**: This bot does not rely heavily on CPU-heavy template image scanning. Instead, it injects modified texture files (`.Ahjie` assets) that color-code key items (e.g., empty fields as Magenta, grown wheat as Cyan). The C++ bot scans for specific HSV color ranges on the screen. See [sctx-xcoder-patching.md](file:///D:/02_Projects/HD/HaydayMod/docs/sctx-xcoder-patching.md) for marker details.
 
 ---
 

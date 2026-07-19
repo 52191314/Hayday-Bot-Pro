@@ -124,10 +124,10 @@ Score each surface independently. Primary files first; related second.
 
 | Role | Path |
 |------|------|
-| `.YaJing` crypto | `HD/cpp/src/infra/YaJingCrypto.cpp` |
+| `.Ahjie` crypto | `HD/cpp/src/infra/AhjieCrypto.cpp` |
 | Paths / backups | `Paths.cpp`, `AccountFiles.cpp` |
 | Config | `Config.cpp` + legacy in `premium gui.cpp` / `serialization.cpp` |
-| Docs | `docs/yajing-encryption.md`, `docs/storage-encryption.md` |
+| Docs | `docs/ahjie-encryption.md`, `docs/storage-encryption.md` |
 
 **Look for:** migrate-from-`.nxrth` safety, validate XML before write, no plaintext secrets in logs, AppData layout consistency.
 
@@ -247,7 +247,7 @@ Use as a review form. Mark `Y` / `N` / `?` and cite file:symbol or log evidence.
 - [ ] Flow states (`SetFarmFlowState` / sales) log transitions at INFO appropriately
 
 ### S9 Crypto / config
-- [ ] `.YaJing` write only after XML validation
+- [ ] `.Ahjie` write only after XML validation
 - [ ] Legacy `.nxrth` migration is one-way safe (keeps backup)
 - [ ] Logs never dump full session tokens / passwords
 - [ ] Config paths resolve under `%APPDATA%\NXRTH_Premium\` consistently

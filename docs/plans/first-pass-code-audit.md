@@ -19,7 +19,7 @@ Follow framework §11 order:
 | 1 | **S2** Injection + HSV | `AccountFiles.cpp` (`InjectImportantFiles`), `bot_logic.cpp` (HSV tables / scanners), farming color helpers | 15% |
 | 1 | **S5** Farming | `operations/farming/Farming.cpp`, `Animals.cpp` (spot-check only) | 15% |
 | 2 | **S1** Orchestration | `PremiumLoop.cpp`, `Cycles.cpp`, load/save order | 15% |
-| 2 | **S9** Crypto / account integrity | `AccountFiles.cpp`, `YaJingCrypto.cpp`, migration paths | 8% |
+| 2 | **S9** Crypto / account integrity | `AccountFiles.cpp`, `AhjieCrypto.cpp`, migration paths | 8% |
 | 3 | **S7** Emulator I/O | `EmulatorControl.cpp`, `Adb.cpp`, `MinitouchClient.cpp`, `TouchInput.cpp` | 12% |
 | 3 | **S8** Recovery | `ScreenRecovery.cpp`, `RuntimeHealth.cpp`, `FlowLogging.cpp` | 12% |
 
@@ -87,7 +87,7 @@ Also add a one-line link from:
 
 2. **S1 + S9 (rotation / accounts)**  
    - Trace `RunPremiumBot` → load → inject → farm → save → next slot.  
-   - Validate force-stop, push path, failed-load abort, `.nxrth` → `.YaJing` migration safety.  
+   - Validate force-stop, push path, failed-load abort, `.nxrth` → `.Ahjie` migration safety.  
    - Checklist §6 S1 + S9.
 
 3. **S7 + S8 (I/O + recovery)**  

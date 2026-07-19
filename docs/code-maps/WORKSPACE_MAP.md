@@ -33,7 +33,7 @@ This workspace is a multi-repository, multi-language environment centered around
 | `docs/storage-encryption.md` | Details on `storage_new.xml` AES-128-ECB decryption/encryption. |
 | `docs/sctx-xcoder-patching.md` | Workflow for patching texture files with the XCoder toolchain. |
 | `docs/system-cert-injection-and-network-analysis.md` | Setup guide for mitmproxy CA trust in MEmu. |
-| `docs/yajing-encryption.md` | Format analysis of `.YaJing` encrypted payloads. |
+| `docs/ahjie-encryption.md` | Format analysis of `.Ahjie` encrypted payloads. |
 
 ---
 

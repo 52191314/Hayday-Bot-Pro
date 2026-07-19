@@ -1,6 +1,6 @@
 # XCoder / SCTX Visual Patching
 
-This guide describes how the bot rebuilds Hay Day visual payloads from the installed APK assets, patches selected SCTX atlases, and emits `.YaJing` injector files.
+This guide describes how the bot rebuilds Hay Day visual payloads from the installed APK assets, patches selected SCTX atlases, and emits `.Ahjie` injector files.
 
 ## Tooling
 
@@ -33,7 +33,7 @@ C:\Users\52191314\.cache\codex-runtimes\codex-primary-runtime\dependencies\pytho
 4. Build texture masks for selected exports.
 5. Patch decoded PNG atlases.
 6. Re-encode the workspace to valid SCTX.
-7. Encrypt each payload as `.YaJing`.
+7. Encrypt each payload as `.Ahjie`.
 8. Replace `HD/x64/Release/injecthacks`, after backing up the old folder.
 9. Write a manifest and raw device-push files under the build folder.
 
@@ -119,25 +119,25 @@ Tags are white text with a dark stroke for template readability.
 Base nature payloads:
 
 ```text
-inject.YaJing   -> nature_new.sc
-inject2.YaJing  -> nature_new_0.sctx
-inject3.YaJing  -> nature_new_1.sctx
-inject4.YaJing  -> nature_new_2.sctx
-inject5.YaJing  -> nature_new_3.sctx, optional
+inject.Ahjie   -> nature_new.sc
+inject2.Ahjie  -> nature_new_0.sctx
+inject3.Ahjie  -> nature_new_1.sctx
+inject4.Ahjie  -> nature_new_2.sctx
+inject5.Ahjie  -> nature_new_3.sctx, optional
 ```
 
 Extra payloads follow:
 
 ```text
-inject_extra_<stem>_<texture>.YaJing
+inject_extra_<stem>_<texture>.Ahjie
 ```
 
 Examples:
 
 ```text
-inject_extra_trees_0.YaJing
-inject_extra_animals_0.YaJing
-inject_extra_buildings_new_0.YaJing
+inject_extra_trees_0.Ahjie
+inject_extra_animals_0.Ahjie
+inject_extra_buildings_new_0.Ahjie
 ```
 
 ## Device Push Verification
@@ -161,7 +161,7 @@ Then compare local hashes with remote hashes. If `adb devices` shows no connecte
 
 ## Common Failures
 
-- `nature_new_3.sctx` absent: OK. It should be skipped and `inject5.YaJing` should remain optional.
+- `nature_new_3.sctx` absent: OK. It should be skipped and `inject5.Ahjie` should remain optional.
 - Pillow import error from `D:/XCoder-master/venv`: use the bundled Python shown above.
 - Decrypt failure in the injector: rebuild payloads and make sure the C++ asset-key seed matches the Python seed.
 - Crops not detected: inspect the patched `nature_new_*` atlas previews and verify magenta/orange/cyan markers survived SCTX re-encode without large atlas floods.

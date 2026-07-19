@@ -1,9 +1,6 @@
 # 🌾 Hayday-Bot-Pro (Project Wheat)
 
-> [!NOTE]
-> **Hayday-Bot-Pro** (internally known as **Project Wheat**) is an advanced, high-performance successor and fork of the original `northXD/Hayday-multi-bot`. It combines a multi-instance C++ farming engine with sophisticated security bypasses, cryptographic tools, and network traffic interception tools.
 
----
 
 ## 📖 Overview
 

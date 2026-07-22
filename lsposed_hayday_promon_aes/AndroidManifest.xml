@@ -1,8 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.xcoder.haydayhook" android:versionCode="1" android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28" />
-    <application android:label="HayDay Promon AES Hook" android:allowBackup="false" android:extractNativeLibs="false">
-        <meta-data android:name="xposedmodule" android:value="true" />
-        <meta-data android:name="xposeddescription" android:value="Hooks Hay Day Promon observer and Java crypto for AES recovery" />
-        <meta-data android:name="xposedminversion" android:value="93" />
-    </application>
-</manifest>

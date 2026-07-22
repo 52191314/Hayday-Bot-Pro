@@ -56,8 +56,14 @@ templates/screenshot_*.png
 runtime/templates/screenshot_*.png
 
 # Nested independent Git repositories (tracked separately)
-HD/
 third_party/
+
+# Private development / non-build artifacts in HD
+HD/.publish_repo/
+HD/system_tuning_backup_20260423/
+HD/tools/
+HD/templates/*.png1
+HD/replace_grass.py
 
 # Large binary/resource/archive folders
 analysis_artifacts/

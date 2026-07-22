@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <HaydayVcpkgRoot Condition="'$(HaydayVcpkgRoot)'=='' and '$(VCPKG_ROOT)'!='' and Exists('$(VCPKG_ROOT)\installed\x64-windows\include')">$(VCPKG_ROOT)\</HaydayVcpkgRoot>
+    <HaydayVcpkgRoot Condition="'$(HaydayVcpkgRoot)'=='' and Exists('D:\vcpkg\installed\x64-windows\include')">D:\vcpkg\</HaydayVcpkgRoot>
+    <HaydayVcpkgRoot Condition="'$(HaydayVcpkgRoot)'=='' and Exists('E:\vcpkg\installed\x64-windows\include')">E:\vcpkg\</HaydayVcpkgRoot>
+  </PropertyGroup>
+</Project>

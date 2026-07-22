@@ -1,13 +1,40 @@
+# Python virtual environment
+venv_frida_16_5_6/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.py[cod]
+
+# Local logs and output files
+build_log.txt
+login_output.txt
+packet_*.bin
+live_storage_new.xml
+logs/
+crash_log.txt
+
+# User back-ups and credentials
+Account_backup/
+credentials.json
+*.pem
+*.jks
+*.key
+Backups/
+
+# Nesting and builds
+build/
+*build/
+bin/
+obj/
 .vs/
 .idea/
 .vscode/
-*.user
 *.suo
+*.user
 *.db
 *.opendb
 *.VC.db
-
-# Build outputs
 x64/
 x86/
 Debug/
@@ -25,16 +52,25 @@ Release/
 # Local bot state
 nxrth_config.ini
 nxrth_inventory.ini
-crash_log.txt
-Backups/
 templates/screenshot_*.png
 runtime/templates/screenshot_*.png
 
-# Python helper caches
-__pycache__/
-*.py[cod]
+# Nested independent Git repositories (tracked separately)
+third_party/
 
-# Large/generated raw Hay Day asset dumps kept outside Git
+# Private development / non-build artifacts in HD
+HD/.publish_repo/
+HD/system_tuning_backup_20260423/
+HD/tools/
+HD/templates/*.png1
+HD/replace_grass.py
+
+# Large binary/resource/archive folders
+analysis_artifacts/
+source_packages/
+Reference_Assets/
+magisk_memu_boot/*
+!magisk_memu_boot/scripts/
 *.zip
 *.fla
 Decoded/
@@ -45,6 +81,10 @@ SC/
 Tagged_Assets/
 Tagged_Corrected/
 Tagged_Test/
-Reference_Assets/
 codex_tmp/
 cow/
+
+# Compiled binary files
+*.apk
+*.idsig
+

@@ -1,0 +1,40 @@
+{
+  "name": "Protect Main Branch",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "52191314/Hayday-Bot-Pro",
+  "enforcement": "active",
+  "bypass_actors": [],
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "refs/heads/main"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "creation"
+    },
+    {
+      "type": "required_signatures"
+    },
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 1,
+        "dismiss_stale_reviews_on_push": true,
+        "require_code_owner_review": false,
+        "require_last_push_approval": false,
+        "required_review_thread_resolution": true
+      }
+    }
+  ]
+}

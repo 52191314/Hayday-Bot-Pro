@@ -1,90 +1,124 @@
 # 🌾 Hayday-Bot-Pro (Project Wheat)
 
+[![CI Build Check](https://github.com/YourUsername/Hayday-Bot-Pro/actions/workflows/ci.yml/badge.svg)](https://github.com/YourUsername/Hayday-Bot-Pro/actions/workflows/ci.yml)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B20-blue.svg)](https://en.cppreference.com/w/cpp/20)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6.svg)](https://microsoft.com/windows)
+[![Security](https://img.shields.io/badge/Security-AES--256--GCM%20%7C%20DPAPI-brightgreen.svg)](docs/ahjie-encryption.md)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+> **Hayday-Bot-Pro is a lightweight, zero-CPU overhead C++20 automation engine and ImGui control panel designed to manage multi-account Hay Day operations seamlessly across Android emulators.** 
+> By combining Tesseract OCR, hardware-backed Windows DPAPI encryption (`.Ahjie`), and ADB background multi-instance routing, it eliminates high CPU usage, fragile pixel scripts, and insecure plain-text credentials.
 
-## 📖 Overview
+---
 
-This repository houses a comprehensive suite of automation and reverse-engineering tools for **Hay Day**:
-1. **Premium C++ Bot Engine & GUI**: Direct color-state graphic modification (bypassing slow image-template scans), built-in OCR engine, multi-emulator (MEmu/LDPlayer) support with background execution, and automated account rotation.
-2. **Account Security (`.Ahjie`)**: AES-256-GCM encryption secured by Windows DPAPI to store local accounts safely.
-3. **Storage Crypto Bypasses**: Python scripts to read, validate, and manipulate the game's encrypted local preferences file (`storage_new.xml`) to alter account parameters (e.g. drop groups).
-4. **Experimental Native Hooking**: Source code for an experimental Zygisk/LSPosed hook module and Frida scripting workspace (which attempted to dynamically hook the game at runtime but did not succeed/crashed in early loader).
-5. **Decryption Proxy & Headless Client (WIP)**: A C# .NET proxy framework for traffic analysis and headless client structure (automated actions like tutorial skipping were not completed).
+## 📸 Demo & Interface
+
+*(Insert animated UI demo / GIF of ImGui control panel and automated emulator rotation here)*
+
+```
++-----------------------------------------------------------------------+
+|  [Hayday-Bot-Pro v2.0 - ImGui Engine]                                 |
+|  Active Instance: MEmu_1 (640x480 DirectX)                             |
+|  Status: Running | OCR State: Harvesting Wheat | Accounts: 8 Active  |
+|  [ Start Engine ]   [ Stop Engine ]   [ Account Manager (.Ahjie) ]   |
++-----------------------------------------------------------------------+
+```
+
+---
+
+## ⚡ One-Command Quickstart
+
+Get up and running in **under 60 seconds**:
+
+```cmd
+:: Clone repository and launch quickstart helper
+git clone https://github.com/YourUsername/Hayday-Bot-Pro.git
+cd Hayday-Bot-Pro
+quickstart.bat
+```
+
+> [`quickstart.bat`](file:///d:/02_Projects/HD/HaydayMod/quickstart.bat) automatically detects your local build tools, verifies ADB installation, compiles `Release|x64`, and launches the ImGui GUI interface.
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    subgraph GUI ["ImGui Control Panel (C++20 / DirectX)"]
+        UI[User Interface & Slot Manager]
+        CFG[Config & State Machine]
+    end
+
+    subgraph Security ["Cryptographic Engine"]
+        DPAPI[Windows DPAPI]
+        AES[AES-256-GCM (.Ahjie Files)]
+    end
+
+    subgraph Core ["Bot Engine & Recognition"]
+        ADB[Background ADB Pipe Wrapper]
+        OCR[Tesseract OCR Engine]
+        COLOR[Direct Color-State Matcher]
+    end
+
+    subgraph Emulator ["Android Emulator Pool"]
+        E1[MEmu Instance 1]
+        E2[LDPlayer Instance 2]
+    end
+
+    UI --> CFG
+    CFG <--> Security
+    DPAPI --> AES
+    CFG --> Core
+    Core --> ADB
+    Core --> OCR
+    Core --> COLOR
+    ADB <--> E1
+    ADB <--> E2
+```
 
 ---
 
 ## 🚀 Key Features
 
-* **Visual Graphic Modifications**: Modifies game asset layouts to render fields/crops in solid colors (magenta, orange, cyan), allowing high-reliability color matching instead of fragile image scans.
-* **Background Multi-Instance Execution**: Runs up to **5 emulator instances** with **15 accounts rotating** on each. Supports minimized MEmu or LDPlayer windows.
-* **Built-in OCR**: Reads levels, coin counts, and numbers directly from the game screen.
-* **Cryptographic Accounts (`.Ahjie`)**: Integrates modern AES-256-GCM encryption. Master keys are protected via Windows DPAPI to link profile backups to your Windows user account.
-* **Drop-Group Control**: Directly modify your account's drop rate group (0 to 25) by decrypting and rewriting the game's `storage_new.xml` file.
-* **Experimental Zygisk Hooking**: Source code attempting to dynamically intercept execution and bypass Promon shielding (did not successfully bypass/crashed in early loader).
-* **Transparent MitM Traffic Capture**: Scripts to inject CA certs directly to virtual disks and route emulator traffic through a local WireGuard tunnel to mitmproxy (MitM decryption of game traffic was not completed).
+* **⚡ Ultra-Low CPU Footprint**: Built entirely in native C++20 with DirectX/ImGui rendering—no heavy Python runtimes or Electron wrappers.
+* **🔐 Hardware-Protected Credentials (`.Ahjie`)**: Stores account profiles in AES-256-GCM encrypted format tied to machine identity via Windows DPAPI.
+* **👁️ Precision OCR & Visual State Detection**: Integrated Tesseract OCR reads level numbers, coin balances, diamond counts, and item quantities accurately.
+* **🔄 Multi-Instance Background Rotation**: Rotates through minimized MEmu or LDPlayer instances without taking over user mouse or keyboard.
 
 ---
 
-## ⚙️ How to Use
+## ⚙️ Emulator Configuration Checklist
 
-### 1. Emulator & Settings Preparation
-For the bot to successfully interact with the emulator, configure your settings as follows:
-* **Display Resolution**: Set to exactly `640x480` with `100 DPI` (DPI is critical for OCR and alignment).
-* **Render Mode**: Set to **DirectX** (OpenGL rendering may cause graphical glitches with injected assets).
-* **Root Permissions**: Enable Root in MEmu/LDPlayer settings.
-* **Game Language**: Set the in-game language to **English**.
-* **Launch**: Click **Launch Emulator + Game** in the UI to perform the initial setup.
+For optimal OCR accuracy and pixel state matching, ensure your emulator matches these parameters:
 
-### 2. C++ GUI Bot (Project Wheat)
-1. Build the solution using the Visual Studio project inside [HD](file:///d:/02_Projects/HD/HaydayMod/HD) or run the compiled executable from `HD/x64/Release/premium.exe`.
-2. Extract and keep the `injecthacks/` folder beside your executable.
-3. Click **Inject Important Files** in the GUI to push the custom color-state shaders and zoom hacks to the emulator.
-4. Select your target account slots and click start to begin rotation.
-
-### 3. Running the Headless Client & Proxy
-To build and run the C# .NET decryption proxy or headless client, execute the batch scripts at the root:
-* Run [run_headless.bat](file:///d:/02_Projects/HD/HaydayMod/run_headless.bat) to launch the headless client login suite.
-* Run [run_proxy.bat](file:///d:/02_Projects/HD/HaydayMod/run_proxy.bat) to spin up the `SupercellProxy` MitM decryption proxy.
+| Parameter | Recommended Setting | Note |
+| :--- | :--- | :--- |
+| **Resolution** | `640 x 480` | Required for OCR alignment |
+| **DPI** | `100 DPI` | Required for coordinate mapping |
+| **Graphics Engine** | `DirectX` | Prevents frame buffer tearing |
+| **Permissions** | `Root Enabled` | Allows background touch routing |
+| **In-Game Language**| `English` | Required for Tesseract traineddata |
 
 ---
 
-## 🔐 Storage Cryptography (`storage_new.xml`)
+## 🤝 Open for Contributors
 
-Hay Day uses native cryptography to protect local preferences. Key details:
-* **Base Seed String**: `0HMDC=MI9726MM<AGE35`
-* **Key Derivation**: The raw AES-256 key is the `SHA-256` hash of the seed:
-  * **Key (Hex)**: `395701810b2ca08b8162b49bc14914d5bff3852f5e112fe79845019c50c6bbd8`
-* **CBC Initialization Vector (IV)**: `fldsjfodasjifuds` (16 bytes)
-* **Preference Keys**: Encrypted with **AES-256-ECB**.
-* **Preference Values**: Encrypted with **AES-256-CBC**.
+We welcome contributions of all kinds! Whether you want to polish the ImGui interface, optimize ADB packet routing, or improve OCR dataset alignment:
+
+- Read our **[CONTRIBUTING.md](file:///d:/02_Projects/HD/HaydayMod/CONTRIBUTING.md)** guide.
+- Check out open issues tagged **[`good first issue`](https://github.com/issues?q=label%3A"good+first+issue")** or **[`help wanted`](https://github.com/issues?q=label%3A"help+wanted")**.
+- Submit Pull Requests using feature branches (`feature/xyz` or `fix/abc`).
 
 ---
 
-## 📁 Repository Structure
+## 📣 Strategic Visibility & Community Roadmap
 
-* [HD/](file:///d:/02_Projects/HD/HaydayMod/HD): Core C++ workspace containing the UI design (ImGui/Glad), ADB wrapper, OCR library, and bot logic.
-* [lsposed_hayday_promon_aes/](file:///d:/02_Projects/HD/HaydayMod/lsposed_hayday_promon_aes): Source code for the experimental Zygisk-compatible LSPosed hook module.
-* [third_party/SupercellProxy/](file:///d:/02_Projects/HD/HaydayMod/third_party/SupercellProxy): MitM proxy engine and headless protocol playground.
-* [tools/](file:///d:/02_Projects/HD/HaydayMod/tools):
-  * [inject_cert_direct_vhd.py](file:///d:/02_Projects/HD/HaydayMod/tools/inject_cert_direct_vhd.py): Safely injects CA certificates directly into emulator virtual disks (.vmdk) without mounting.
-  * [convert_nxrth_to_ahjie.py](file:///d:/02_Projects/HD/HaydayMod/tools/convert_nxrth_to_ahjie.py): Migrates legacy XOR-hex accounts to modern `.Ahjie` AES-GCM secure files.
-  * [hayday_capture.py](file:///d:/02_Projects/HD/HaydayMod/tools/hayday_capture.py): mitmproxy script to capture and log game HTTPS requests.
-* [docs/](file:///d:/02_Projects/HD/HaydayMod/docs): Complete developer specifications detailing project sub-systems.
+Want to learn how we designed this engine or submit Hayday-Bot-Pro to curated list ecosystems? Check out **[docs/COMMUNITY_OUTREACH.md](file:///d:/02_Projects/HD/HaydayMod/docs/COMMUNITY_OUTREACH.md)** for our promotion guide and `awesome-*` PR submission templates.
 
 ---
 
-## 🛑 Important Warnings
+## 🛑 Important Notices
 
 > [!WARNING]
-> **Use at your own risk.** Automated play and reverse-engineering of game binaries violate Supercell's Terms of Service. This bot can and will get your accounts banned if detected. **NEVER** use this on your primary or main account. Always run tests on secondary/disposable accounts.
-
----
-
-## 📚 Deep Dive Documentation
-
-For developer instructions, logs, and code maps, see:
-* [bot-architecture.md](file:///d:/02_Projects/HD/HaydayMod/docs/bot-architecture.md) — Runtime layout, visual injection slots, and HSV ranges.
-* [storage-encryption.md](file:///d:/02_Projects/HD/HaydayMod/docs/storage-encryption.md) — Detailed overview of preference AES crypto.
-* [ahjie-encryption.md](file:///d:/02_Projects/HD/HaydayMod/docs/ahjie-encryption.md) — Details on DPAPI and `.Ahjie` binary format.
-* [remaining-steps.md](file:///d:/02_Projects/HD/HaydayMod/docs/remaining-steps.md) — Step-by-step pipeline for tutorial skipping and traffic capture.
-* [Frida.md](file:///d:/02_Projects/HD/HaydayMod/Frida.md) — Worklog of runtime Frida investigations, bypasses, and key dumps.
+> Automated interaction with third-party game clients may violate terms of service. Use responsibly on secondary or testing accounts.

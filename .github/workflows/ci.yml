@@ -1,0 +1,33 @@
+name: CI Build Check
+
+on:
+  push:
+    branches: [ "main", "feature/*", "fix/*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build C++ Bot Solution
+      run: |
+        msbuild HD/"Premium bot.sln" /p:Configuration=Release /p:Platform=x64 /maxcpucount
+
+    - name: Verify Executable Output
+      run: |
+        if (Test-Path "HD/x64/Release/premium.exe") {
+            Write-Host "Build verification successful: premium.exe created."
+        } else {
+            Write-Error "Executable not found after build!"
+            exit 1
+        }

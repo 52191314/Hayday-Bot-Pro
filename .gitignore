@@ -65,12 +65,22 @@ HD/tools/
 HD/templates/*.png1
 HD/replace_grass.py
 
+# Private tooling & RE artifacts
+lsposed_hayday_promon_aes/
+magisk_memu_boot/
+Frida.md
+run_headless.bat
+run_proxy.bat
+SESSION_HISTORY.md
+README_SPLIT.md
+LARGE_FILES_NOT_INCLUDED.md
+MISSING_TEMPLATE_PLACEHOLDERS.md
+account_2_storage_new.xml
+asset_name_rects.generated.csv
+asset_tags.example.json
+asset_tags.generated.json
+
 # Large binary/resource/archive folders
-analysis_artifacts/
-source_packages/
-Reference_Assets/
-magisk_memu_boot/*
-!magisk_memu_boot/scripts/
 *.zip
 *.fla
 Decoded/

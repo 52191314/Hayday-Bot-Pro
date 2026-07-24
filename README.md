@@ -46,28 +46,28 @@ quickstart.bat
 ```mermaid
 flowchart TD
     subgraph GUI ["ImGui Control Panel (C++20 / DirectX)"]
-        UI[User Interface & Slot Manager]
-        CFG[Config & State Machine]
+        UI["User Interface & Slot Manager"]
+        CFG["Config & State Machine"]
     end
 
     subgraph Security ["Cryptographic Engine"]
-        DPAPI[Windows DPAPI]
-        AES[AES-256-GCM (.Ahjie Files)]
+        DPAPI["Windows DPAPI"]
+        AES["AES-256-GCM (.Ahjie Files)"]
     end
 
     subgraph Core ["Bot Engine & Recognition"]
-        ADB[Background ADB Pipe Wrapper]
-        OCR[Tesseract OCR Engine]
-        COLOR[Direct Color-State Matcher]
+        ADB["Background ADB Pipe Wrapper"]
+        OCR["Tesseract OCR Engine"]
+        COLOR["Direct Color-State Matcher"]
     end
 
     subgraph Emulator ["Android Emulator Pool"]
-        E1[MEmu Instance 1]
-        E2[LDPlayer Instance 2]
+        E1["MEmu Instance 1"]
+        E2["LDPlayer Instance 2"]
     end
 
     UI --> CFG
-    CFG <--> Security
+    CFG <--> DPAPI
     DPAPI --> AES
     CFG --> Core
     Core --> ADB

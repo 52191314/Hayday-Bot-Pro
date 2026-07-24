@@ -420,10 +420,10 @@ def main() -> int:
     )
     parser.add_argument("--targets", type=Path)
     parser.add_argument(
-        "--output-json", type=Path, default=Path("asset_tags.generated.json")
+        "--output-json", type=Path, default=Path("config/assets/asset_tags.generated.json")
     )
     parser.add_argument(
-        "--output-csv", type=Path, default=Path("asset_name_rects.generated.csv")
+        "--output-csv", type=Path, default=Path("config/assets/asset_name_rects.generated.csv")
     )
     args = parser.parse_args()
 

@@ -61,24 +61,24 @@ third_party/
 # Private development / non-build artifacts in HD
 HD/.publish_repo/
 HD/system_tuning_backup_20260423/
-HD/tools/
 HD/templates/*.png1
-HD/replace_grass.py
 
 # Private tooling & RE artifacts
-lsposed_hayday_promon_aes/
-magisk_memu_boot/
-Frida.md
+android/lsposed_hayday_promon_aes/
+android/lsposed_hayday_promon_aes_signed/
+android/magisk_memu_boot/
+docs/frida-reverse-engineering.md
 run_headless.bat
 run_proxy.bat
-SESSION_HISTORY.md
-README_SPLIT.md
-LARGE_FILES_NOT_INCLUDED.md
-MISSING_TEMPLATE_PLACEHOLDERS.md
-account_2_storage_new.xml
-asset_name_rects.generated.csv
-asset_tags.example.json
-asset_tags.generated.json
+docs/audits/session-history-archive.md
+docs/readme-split-archive.md
+docs/large-files-reference.md
+docs/audits/missing-template-placeholders.md
+docs/user-prompts-notes.md
+tools/account_2_storage_new.xml
+config/assets/asset_name_rects.generated.csv
+config/assets/asset_tags.example.json
+config/assets/asset_tags.generated.json
 
 # Large binary/resource/archive folders
 *.zip

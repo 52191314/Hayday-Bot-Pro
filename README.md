@@ -13,7 +13,6 @@
 
 ## 📸 Demo & Interface
 
-*(Insert animated UI demo / GIF of ImGui control panel and automated emulator rotation here)*
 
 ```
 +-----------------------------------------------------------------------+
